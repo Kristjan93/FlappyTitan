@@ -16,6 +16,8 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <!-- <link rel="stylesheet" href="styles/clouds.css"> -->
+        <link rel="stylesheet" href="styles/cloudy.css">
         <!-- endbuild -->
     </head>
     <body>
@@ -27,6 +29,21 @@
         </audio>
 
         <div class="GameCanvas">
+                    <!-- We are going to add 5 animated clouds here on the game canvas
+            TODO: turn cloud id into class
+
+        -->
+           
+            <div id="clouds">
+                
+                <div class="cloud x1">1</div>
+                <div class="cloud x2">2</div>
+                <div class="cloud x3">3</div>
+                <div class="cloud x4">4</div>
+                <div class="cloud x5">5</div>
+
+            </div>
+            
             <div class="Player"></div>
             
             <div class="Scoreboard">

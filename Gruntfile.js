@@ -25,6 +25,18 @@ module.exports = function (grunt) {
             dist: 'dist'
         },
 
+
+
+        less: {
+            development: {
+                options: {
+                    paths: ["less/"]
+                },
+                files: {
+                    "app/styles/style.css" : "app/less/*.less"
+                }
+            }
+        },
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
@@ -343,6 +355,8 @@ module.exports = function (grunt) {
             ]
         }
     });
+
+    grunt.loadNpmTasks("grunt-contrib-less");
 
 
     grunt.registerTask('serve', function (target) {
