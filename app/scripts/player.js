@@ -2,6 +2,7 @@ window.Player = (function() {
 	'use strict';
 
 	var Controls = window.Controls;
+	var started = false;
 
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
@@ -31,11 +32,12 @@ window.Player = (function() {
 	Player.prototype.onFrame = function(delta) {
 
 		if (Controls.keys.space && Controls._didJump) {
+			started = true;
 			this.pos.y -= JUMP_UP;
 			Controls.didJump();
 		}
 
-		if (Controls._didJump === false) {
+		if (!Controls._didJump && started) {
 			this.pos.y += FALL_DOWN;
 		}
 
