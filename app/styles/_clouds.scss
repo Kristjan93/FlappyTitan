@@ -1,0 +1,20 @@
+@import 'variables';
+
+.cloud {
+	width: 200px; height: 60px;
+	background: $background-col;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+}
+
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: $background-col;
+	width: 100px; height: 80px;
+	border: 1px solid white; /*Just to see it */
+
+}
