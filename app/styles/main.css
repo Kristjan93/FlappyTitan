@@ -51,6 +51,7 @@ color: #000;
 padding: 0.2em 0;
 }
 .GameCanvas {
+
 font-size: 10px;
 position: absolute;
 left: 50%;
@@ -60,5 +61,11 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: white;
+background: -webkit-gradient(linear, center top, center bottom, from(#c9dbe9), to(#fff));
+background: -webkit-linear-gradient(#c9dbe9, #fff);
+background: -moz-linear-gradient(#c9dbe9, #fff);
+background: -o-linear-gradient(#c9dbe9, #fff);
+background: -ms-linear-gradient(#c9dbe9, #fff);
+background: linear-gradient(#c9dbe9, #fff);
+
 }
