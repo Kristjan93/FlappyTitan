@@ -60,5 +60,10 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: red;
+background: -webkit-gradient(linear, center top, center bottom, from(#917c4d), to(#ffffff));
+background: -webkit-linear-gradient(#917c4d, #ffffff);
+background: -moz-linear-gradient(#917c4d, #ffffff);
+background: -o-linear-gradient(#917c4d, #ffffff);
+background: -ms-linear-gradient(#917c4d, #ffffff);
+background: linear-gradient(#917c4d, #ffffff);
 }
