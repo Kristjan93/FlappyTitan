@@ -1,0 +1,64 @@
+.Player {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5em;
+	height: 5em;
+	background: blue;
+}
+
+.Scoreboard {
+	position: absolute;
+	left: 50%;
+	top: 10em;
+	height: 30em;
+	width: 40em;
+	margin-left: -20em;
+	box-sizing: border-box;
+	background: purple;
+	text-align: center;
+	-webkit-transform: translate(0, -40em);
+	-webkit-transition: -webkit-transform 0.5s;
+}
+
+/**
+* Reset transform to animate it into the correct spot on the screen.
+*/
+.Scoreboard.is-visible {
+	-webkit-transform: none;
+}
+
+.Scoreboard-restart {
+	margin-top: 20em;
+	font-size: inherit;
+	padding: 0.4em 1.5em;
+	border: 0.2em solid white;
+	background: none;
+	cursor: pointer;
+}
+.Scoreboard-restartText {
+font-family: 'Comic Sans MS', serif;
+font-size: 2.4em;
+color: white;
+}
+body {
+background: black;
+}
+.browsehappy {
+margin: 0.2em 0;
+background: ?#?ccc?;
+color: #000;
+padding: 0.2em 0;
+}
+.GameCanvas {
+font-size: 10px;
+position: absolute;
+left: 50%;
+top: 50%;
+width: 102.4em;
+height: 57.6em;
+margin-left: -51.2em;
+margin-top: -28.8em;
+overflow: hidden;
+background: red;
+}

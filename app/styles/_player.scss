@@ -1,0 +1,14 @@
+
+.Player {
+    // Absolutely position entities at 0,0 and use transform to
+    // move it around.
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    width: em(5em);
+    height: em(5em);
+
+    background: blue;
+
+    transform: translateZ(0);
+}
