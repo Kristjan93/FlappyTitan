@@ -25,18 +25,17 @@ module.exports = function (grunt) {
             dist: 'dist'
         },
 
-
-
         less: {
             development: {
                 options: {
-                    paths: ["less/"]
+                    paths: ["app/styles"]
                 },
                 files: {
-                    "app/styles/style.css" : "app/less/*.less"
+                    "app/styles/style.css" : "app/styles/Less/*.less"
                 }
             }
         },
+
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
