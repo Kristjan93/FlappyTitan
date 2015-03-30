@@ -1,4 +1,5 @@
 var overlaps = (function() {
+	'use strict';
 	function getPositions(elem) {
 		var pos, width, height;
 		pos = $(elem).position();

@@ -1,0 +1,28 @@
+#ground{
+	position: absolute;
+	left: 0%;
+	top: 90%;
+	// width: em(1024px);
+	// height: em(50px);
+	// This looks pretty cool
+	 width: 100em;
+    height: 34em;
+	background-image: url("Images/ground.png");
+	background-color: green;
+	-webkit-animation: groundmove .15s steps(10) infinite;
+	-moz-animation: groundmove .15s steps(10) infinite;
+	-o-animation: groundmove .15s steps(10) infinite;
+
+}
+@-webkit-keyframes groundmove {
+	from { background-position:    0em; }
+	to { background-position: -100em; }
+}
+@-moz-keyframes groundmove {
+	from { background-position:    0em; }
+	to { background-position: -100em; }
+}
+@-o-keyframes groundmove {
+	from { background-position:    0px; }
+	to { background-position: -100em; }
+}

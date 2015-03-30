@@ -37,12 +37,13 @@
 /*Time to animate*/
 .x1 {
   top: -5em;
+  left: 20em;
   -webkit-transform: scale(0.9);
   -moz-transform: scale(0.9);
   transform: scale(0.9);
-  -webkit-animation: moveclouds 15s linear infinite;
-  -moz-animation: moveclouds 15s linear infinite;
-  -o-animation: moveclouds 15s linear infinite;
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
 }
 /*variable speed, opacity, and position of clouds for realistic effect*/
 .x2 {
@@ -74,6 +75,7 @@
 }
 .x5 {
   top: -30em;
+  left: 10em;
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
   transform: scale(0.8);
@@ -111,7 +113,7 @@
   padding: 0;
 }
 body {
-  background: black;
+  background: white;
   overflow: hidden;
 }
 .GameCanvas {
@@ -138,6 +140,43 @@ body {
   padding: 0.2em 0;
 }
 
+#ground {
+  position: absolute;
+  left: 0%;
+  top: 90%;
+  width: 100em;
+  height: 34em;
+  background-image: url("Images/ground.png");
+  background-color: green;
+  -webkit-animation: groundmove 0.15s steps(10) infinite;
+  -moz-animation: groundmove 0.15s steps(10) infinite;
+  -o-animation: groundmove 0.15s steps(10) infinite;
+}
+@-webkit-keyframes groundmove {
+  from {
+    background-position: 0em;
+  }
+  to {
+    background-position: -100em;
+  }
+}
+@-moz-keyframes groundmove {
+  from {
+    background-position: 0em;
+  }
+  to {
+    background-position: -100em;
+  }
+}
+@-o-keyframes groundmove {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -100em;
+  }
+}
+
 .Player {
   position: absolute;
   top: 0;
@@ -151,12 +190,13 @@ body {
 .Scoreboard {
   position: absolute;
   left: 50%;
-  top: 10em;
-  height: 30em;
+  top: 5em;
+  height: 35em;
   width: 40em;
   margin-left: -20em;
   box-sizing: border-box;
-  background: purple;
+  background-image: url("Images/attack-on-titan.jpg");
+  background-position: center;
   text-align: center;
   -webkit-transform: translate(0, -40em);
   -webkit-transition: -webkit-transform 0.5s;
@@ -182,18 +222,32 @@ body {
 }
 
 .Titan {
-  background-color: black;
+  background-image: url("Images/titansOne.png");
   background-size: cover;
+  background-color: black;
   position: absolute;
   left: 80em;
   width: 10em;
-  height: 17em;
+  height: 19em;
   border-radius: 10%;
 }
-.Titan1 {
+.T1 {
+  webkit-transform: rotate(180deg);
+  top: 0;
+  left: 50em;
+}
+.T2 {
+  top: 39em;
+  left: 50em;
+}
+.T3 {
+  left: 80em;
+  width: 10em;
   webkit-transform: rotate(180deg);
   top: 0;
 }
-.Titan2 {
+.T4 {
+  left: 80em;
+  width: 10em;
   top: 39em;
 }

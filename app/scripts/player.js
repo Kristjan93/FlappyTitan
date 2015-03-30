@@ -65,11 +65,11 @@ window.Player = (function() {
 	//it users jquery to check if player touched the titans
 	Player.prototype.checkCollisionWithTitan = function() {
 		var didTouch = false;
-		Player = $('.Player')[0],
-		$('.Titan').map(function(i) {
+		Player = $('.Player')[0];
+		$('.Titan').map(function() {
 			if (overlaps(Player, this)) {
 				didTouch = true;
-			};
+			}
 		});
 		if (didTouch) {
 			Game.isPlaying = false;

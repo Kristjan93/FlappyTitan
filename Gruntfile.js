@@ -28,10 +28,10 @@ module.exports = function (grunt) {
         less: {
             development: {
                 options: {
-                    paths: ["app/styles"]
+                    paths: ['app/styles']
                 },
                 files: {
-                    "app/styles/style.css" : "app/styles/Less/*.less"
+                    'app/styles/style.css' : 'app/styles/Less/*.less'
                 }
             }
         },
@@ -355,7 +355,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks('grunt-contrib-less');
 
 
     grunt.registerTask('serve', function (target) {
@@ -368,7 +368,8 @@ module.exports = function (grunt) {
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
-            'watch'
+            'watch',
+            'less'
         ]);
     });
 
