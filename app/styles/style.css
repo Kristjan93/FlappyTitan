@@ -264,20 +264,24 @@ body {
   border-radius: 10%;
 }
 .T1 {
+  background-color: black;
   top: 0em;
   left: 0em;
   webkit-transform: rotate(180deg);
 }
 .T2 {
+  background-color: pink;
   top: 0em;
   left: 0em;
 }
 .T3 {
+  background-color: green;
   top: 0em;
   left: 0em;
   webkit-transform: rotate(180deg);
 }
 .T4 {
+  background-color: blue;
   left: 0em;
   top: 0em;
 }
