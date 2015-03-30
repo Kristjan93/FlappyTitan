@@ -404,7 +404,8 @@ module.exports = function (grunt) {
         'copy:dist',
         'rev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'less'
     ]);
 
     grunt.registerTask('default', [
