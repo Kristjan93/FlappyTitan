@@ -60,8 +60,6 @@ window.Titans = (function() {
 		this.TitanTwo.posTop.x = INITIAL_POSITION_X;
 		this.TitanTwo.posTop.y = INITIAL_POSITION_TOP_Y;
 
-
-
 		this.TitanOne.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanOne.posTop.x + 'em, ' + this.TitanOne.posTop.y + 'em)');
 		this.TitanOne.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanOne.posBot.x + 'em, ' + this.TitanOne.posBot.y + 'em)');
 
@@ -72,9 +70,16 @@ window.Titans = (function() {
 	Titans.prototype.onFrame = function(delta) {
 
 		if(Game.isPlaying) {
+
 			if(this.TitanOne.posTop.x < 20) {
 				// this.TitanOne.turnedOn = false;
 				this.TitanTwo.turnedOn = true;
+			}
+
+			if(this.TitanTwo.posTop.x < -10) {
+				this.TitanOne.turnedOn = true;
+				this.TitanTwo.turnedOn = false;
+				this.reset();
 			}
 
 			if(this.TitanOne.turnedOn) {
@@ -90,11 +95,6 @@ window.Titans = (function() {
 
 				this.TitanTwo.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanTwo.posTop.x + 'em, ' + this.TitanTwo.posTop.y + 'em)');
 				this.TitanTwo.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanTwo.posBot.x + 'em, ' + this.TitanTwo.posBot.y + 'em)');
-			}
-			if(this.TitanTwo.posTop.x < -10) {
-				this.TitanOne.turnedOn = true;
-				this.TitanTwo.turnedOn = false;
-				this.reset();
 			}
 		}
 	};
