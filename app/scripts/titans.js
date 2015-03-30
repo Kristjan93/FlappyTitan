@@ -24,20 +24,20 @@ var Titans = {
 	reset: function() {
 		$('.T1').stop(true, true);
 		$('.T1').css({
-			left: '50em'
+			left: '83em'
 		});
 
 		$('.T2').stop(true, true);
 		$('.T2').css({
-			left: '50em'
+			left: '83em'
 		});
 
 		$('.T3').stop(true, true);
 		$('.T3').css({
-			left: '80em'
+			left: '50em'
 		});
 		$('.T4').stop(true, true);
-		$('.T4').css({left: '80em'});
+		$('.T4').css({left: '50em'});
 		
 
 	}

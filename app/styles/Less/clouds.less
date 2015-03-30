@@ -11,6 +11,9 @@
     -moz-border-radius: 20em;
     -webkit-border-radius: 20em;
     position: relative; 
+    transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
 }
 
 .cloud:before, .cloud:after {
@@ -22,6 +25,9 @@
   top: -15px;
   left: 10px;
   border-radius: 10em;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
   -webkit-border-radius: 10em;
   -moz-border-radius: 10em;
   -webkit-transform: rotate(180deg);
@@ -32,6 +38,9 @@
 .cloud:after {
     width: 12em; height: 12em;
     top: -5.5em; left: auto; right: 1.5em;
+    transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
 }
 
 .cloudMixIn(@sc, @time) {

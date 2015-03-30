@@ -1,4 +1,4 @@
-window.Player = (function() {
+	window.Player = (function() {
 	'use strict';
 
 	var Controls = window.Controls;
@@ -11,7 +11,7 @@ window.Player = (function() {
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 
-	var JUMP_UP = 10;
+	var JUMP_UP = 7.5;
 	var FALL_DOWN = 0.3;
 
 	var Player = function(el, game) {

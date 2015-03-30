@@ -10,6 +10,9 @@
   -moz-border-radius: 20em;
   -webkit-border-radius: 20em;
   position: relative;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
 }
 .cloud:before,
 .cloud:after {
@@ -21,6 +24,9 @@
   top: -15px;
   left: 10px;
   border-radius: 10em;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
   -webkit-border-radius: 10em;
   -moz-border-radius: 10em;
   -webkit-transform: rotate(180deg);
@@ -33,6 +39,9 @@
   top: -5.5em;
   left: auto;
   right: 1.5em;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
 }
 /*Time to animate*/
 .x1 {
@@ -126,12 +135,11 @@ body {
   margin-left: -51.2em;
   margin-top: -28.8em;
   overflow: hidden;
-  background: -webkit-gradient(linear, center top, center bottom, from(#c9dbe9), to(#ffffff));
-  background: -webkit-linear-gradient(#c9dbe9, #ffffff);
-  background: -moz-linear-gradient(#c9dbe9, #ffffff);
-  background: -o-linear-gradient(#c9dbe9, #ffffff);
-  background: -ms-linear-gradient(#c9dbe9, #ffffff);
-  background: linear-gradient(#c9dbe9, #ffffff);
+  background: linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
+  background: -ms-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
+  background: -moz-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
+  background: -o-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
+  background: -webkit-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
 }
 .browsehappy {
   margin: 0.2em 0;
@@ -182,9 +190,16 @@ body {
   top: 0;
   left: 0;
   width: 5em;
-  height: 5em;
+  height: 7em;
   background: blue;
   transform: translateZ(0);
+  background: url('Images/levi.png') no-repeat center center;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 20%;
 }
 
 .Scoreboard {
@@ -226,14 +241,12 @@ body {
   background-size: cover;
   background-color: black;
   position: absolute;
-  left: 80em;
   width: 10em;
   height: 19em;
   border-radius: 10%;
 }
 .T1 {
   webkit-transform: rotate(180deg);
-  top: 0;
   left: 50em;
 }
 .T2 {
