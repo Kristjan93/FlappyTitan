@@ -1,4 +1,4 @@
-window.Player = (function() {
+	window.Player = (function() {
 	'use strict';
 
 	var Controls = window.Controls;
@@ -7,12 +7,12 @@ window.Player = (function() {
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
 	var WIDTH = 5;
-	var HEIGHT = 10.7;
+	var HEIGHT = 12;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 
-	var JUMP_UP = 10;
-	var FALL_DOWN = 0.5;
+	var JUMP_UP = 8;
+	var FALL_DOWN = 0.4;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -37,7 +37,6 @@ window.Player = (function() {
 			Game.isPlaying = true;
 			this.pos.y -= JUMP_UP;
 			Controls.didJump();
-			Titans.start();
 		}
 
 		if (!Controls._didJump && Game.isPlaying) {
