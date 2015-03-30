@@ -1,44 +1,67 @@
-/*
- * Here we should take care of starting and reseting the tians
- * TODO must not repet my self as much as i am doing here... must fix it.
- */
+window.Titans = (function() {
+	'use strict';
 
-//gunnar næsta skref er að setja setTimeout() á þetta svo einn komi í einu
-//eða held það
-'use strict';
-var Titans = {
-	start: function() {
-		$('.T1').css({
-			left: '-10em'
-		}, 10000, 'linear');
-		$('.T2').animate({
-			left: '-10em'
-		}, 10000, 'linear');
-		$('.T3').animate({
-			left: '-10em'
-		}, 10000, 'linear');
-		$('.T4').animate({
-			left: '-10em'
-		}, 10000, 'linear');
-	},
-	reset: function() {
-		$('.T1').stop(true, true);
-		$('.T1').css({
-			left: '83em'
-		});
+	// All these constants are in em's, multiply by 10 pixels
+	// for 1024x576px canvas.
+	var SPEED = 20; // * 10 pixels per second
+	var WIDTH = 5;
+	var HEIGHT = 12;
 
-		$('.T2').stop(true, true);
-		$('.T2').css({
-			left: '83em'
-		});
+	var INITIAL_POSITION_BOT_X = 105;
+	var INITIAL_POSITION_BOT_Y = 0;
 
-		$('.T3').stop(true, true);
-		$('.T3').css({
-			left: '50em'
-		});
-		$('.T4').stop(true, true);
-		$('.T4').css({left: '50em'});
-		
+	var INITIAL_POSITION_TOP_X = 80;
+	var INITIAL_POSITION_TOP_Y = 50;
 
-	}
-};
+	var Titans = function(el1, el2, el3, el4, game) {
+
+		this.TitanOne = {
+			titanBot: el1,
+			titanTop: el2,
+			pos: {
+				x: 0,
+				y: 0
+			}
+		}
+
+		this.TitanTwo = {
+			titanBot: el3,
+			titanTop: el4,
+			pos: {
+				x: 0,
+				y: 0
+			}
+		}
+		this.game = game;
+	};
+
+	/**
+	 * Resets the state of the player for a new game.
+	 */
+	Titans.prototype.reset = function() {
+		this.TitanOne.pos.x = INITIAL_POSITION_BOT_X;
+		this.TitanOne.pos.y = INITIAL_POSITION_BOT_Y;
+	};
+
+	Titans.prototype.onFrame = function(delta) {
+this.TitanOne.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanOne.pos.x + 'em, ' + this.TitanOne.pos.y + 'em)');
+		if(Game.isPlaying) {
+			this.TitanOne.pos.x -= delta * SPEED;
+			this.TitanOne.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanOne.pos.x + 'em, ' + this.TitanOne.pos.y + 'em)');
+			this.TitanOne.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanOne.pos.x + 'em, ' + 0 + 'em)');
+
+		}
+
+		// this.TitanTwo.pos.x -= delta * SPEED;
+		// this.TitanTwo.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanTwo.pos.x + 'em, ' + 0 + 'em)');
+		// this.TitanTwo.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanTwo.pos.x + 'em, ' + 0 + 'em)');
+	};
+
+	return Titans;
+})();
+
+
+
+
+
+

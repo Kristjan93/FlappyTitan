@@ -9,7 +9,14 @@ window.Game = (function() {
 	 */
 	var Game = function(el) {
 		this.el = el;
+
 		this.player = new window.Player(this.el.find('.Player'), this);
+		this.titans = new window.Titans(this.el.find('.T1'),
+		this.el.find('.T2'),
+		this.el.find('.T3'),
+		this.el.find('.T4'),
+		this);
+
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -20,7 +27,6 @@ window.Game = (function() {
 	 * Runs every frame. Calculates a delta and allows each game
 	 * entity to update itself.
 	 */
-
 	Game.prototype.onFrame = function() {
 		// Check if the game loop should stop.
 		if (!this.isPlaying) {
@@ -29,11 +35,13 @@ window.Game = (function() {
 
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
-				delta = now - this.lastFrame;
+		delta = now - this.lastFrame;
+
 		this.lastFrame = now;
 
 		// Update game entities.
 		this.player.onFrame(delta);
+		this.titans.onFrame(delta);
 
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
@@ -47,7 +55,9 @@ window.Game = (function() {
 
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
+
 		window.requestAnimationFrame(this.onFrame);
+
 		this.isPlaying = true;
 	};
 
@@ -56,34 +66,8 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
-		Titans.reset();
+		this.titans.reset();
 	};
-
-	Game.prototype.checkCollisionWithTitan = (function() {
-		function getPositions(elem) {
-			var pos, width, height;
-			pos = $(elem).position();
-			width = $(elem).width();
-			height = $(elem).height();
-			return [
-				[pos.left, pos.left + width],
-				[pos.top, pos.top + height]
-			];
-		}
-		function comparePositions(p1, p2) {
-			var r1, r2;
-			r1 = p1[0] < p2[0] ? p1 : p2;
-			r2 = p1[0] < p2[0] ? p2 : p1;
-			return r1[1] > r2[0] || r1[0] === r2[0];
-		}
-
-		return function(a, b) {
-			var pos1 = getPositions(a),
-				pos2 = getPositions(b);
-			return comparePositions(pos1[0], pos2[0]) && comparePositions(pos1[1], pos2[1]);
-		};
-
-	})();
 
 	/**
 	 * Signals that the game is over.

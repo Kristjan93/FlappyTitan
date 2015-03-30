@@ -7,12 +7,12 @@
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
 	var WIDTH = 5;
-	var HEIGHT = 5;
+	var HEIGHT = 12;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 
-	var JUMP_UP = 7.5;
-	var FALL_DOWN = 0.3;
+	var JUMP_UP = 8;
+	var FALL_DOWN = 0.4;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -37,7 +37,6 @@
 			Game.isPlaying = true;
 			this.pos.y -= JUMP_UP;
 			Controls.didJump();
-			Titans.start();
 		}
 
 		if (!Controls._didJump && Game.isPlaying) {
