@@ -26,9 +26,11 @@ window.Controls = (function() {
     Controls.prototype._onKeyDown = function(e) {
         // Only jump if space wasn't pressed.
         if (e.keyCode === 32 && !this.keys.space) {
+            document.getElementById('jumpsound').play();
             this._didJump = true;
             var keyName = KEYS[e.keyCode];
             this.keys[keyName] = true;
+
         }
     };
 
