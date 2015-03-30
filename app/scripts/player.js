@@ -36,6 +36,7 @@
 		if (Controls.keys.space && Controls._didJump) {
 			Game.isPlaying = true;
 			this.pos.y -= JUMP_UP;
+			document.getElementById('jumpsound').play();
 			Controls.didJump();
 		}
 
