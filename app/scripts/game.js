@@ -20,6 +20,15 @@ window.Game = (function() {
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
+
+		var startEl = this.el.find('.Startboard');
+		startEl
+			.addClass('is-visible')
+			.find('.Startboard-start')
+			.one('click', function() {
+				start.removeClass('is-visible');
+				that.start();
+			});
 	};
 
 	Game.prototype.score = 0;
@@ -72,6 +81,7 @@ window.Game = (function() {
 		this.titans.reset();
 		this.score = 0;
 		$(".removeScore").remove();
+
 	};
 
 	/**

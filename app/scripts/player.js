@@ -35,6 +35,8 @@
 
 		if (Controls.keys.space && Controls._didJump) {
 			Game.isPlaying = true;
+
+			$(".Startboard").remove();
 			this.pos.y -= JUMP_UP;
 
 			var jumpsound = document.getElementById('jumpsound');

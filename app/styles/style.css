@@ -10,9 +10,11 @@
   -moz-border-radius: 20em;
   -webkit-border-radius: 20em;
   position: relative;
-  transform: translateZ(0);
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .cloud:before,
 .cloud:after {
@@ -24,9 +26,11 @@
   top: -15px;
   left: 10px;
   border-radius: 10em;
-  transform: translateZ(0);
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
   -webkit-border-radius: 10em;
   -moz-border-radius: 10em;
   -webkit-transform: rotate(180deg);
@@ -136,6 +140,11 @@ body {
   background: -moz-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
   background: -o-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
   background: -webkit-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
 }
 #mutebutton {
   background-image: url('Images/Mute.png');
@@ -171,6 +180,10 @@ body {
   background-image: url("Images/ground.png");
   background-color: green;
   overflow: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-animation: groundmove 0.75s steps(10) infinite;
   -moz-animation: groundmove 0.75s steps(10) infinite;
@@ -208,7 +221,11 @@ body {
   width: 5em;
   height: 7em;
   background: blue;
-  -webkit-transform: translatez(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
   background: url('Images/levi3	.png') no-repeat center center;
   background-position: center;
   -webkit-background-size: cover;
@@ -221,7 +238,26 @@ body {
 .Scoreboard {
   position: absolute;
   left: 50%;
-  top: 5em;
+  top: 20em;
+  height: 35em;
+  width: 40em;
+  margin-left: -20em;
+  box-sizing: border-box;
+  background-image: url("Images/attack-on-titan.jpg");
+  background-position: center;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
+}
+.Startboard {
+  position: absolute;
+  left: 50%;
+  top: 20em;
   height: 35em;
   width: 40em;
   margin-left: -20em;
@@ -231,8 +267,23 @@ body {
   text-align: center;
   -webkit-transform: translate(0, -40em);
   -webkit-transition: -webkit-transform 0.5s;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.Startboard-start {
+  margin-top: 20em;
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  border: 0.2em solid white;
+  background: none;
+  cursor: pointer;
 }
 /**
+
+
 * Reset transform to animate it into the correct spot on the screen.
 */
 .Scoreboard.is-visible {
@@ -278,12 +329,77 @@ body {
   color: white;
 }
 
+.Scoreboard {
+  position: absolute;
+  left: 50%;
+  top: 5em;
+  height: 35em;
+  width: 40em;
+  margin-left: -20em;
+  box-sizing: border-box;
+  background-image: url("Images/attack-on-titan.jpg");
+  background-position: center;
+  text-align: center;
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
+}
+/**
+* Reset transform to animate it into the correct spot on the screen.
+*/
+.Startboard.is-visible {
+  -webkit-transform: none;
+}
+.Startboard-start {
+  margin-top: 20em;
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  border: 0.2em solid white;
+  background: none;
+  cursor: pointer;
+}
+.Scoreboard-endText {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+.score {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+.Scoreboard-score {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+.Scoreboard-restartText {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 2.4em;
+  color: white;
+}
+#finaltext {
+  overflow: hidden;
+  font-size: em(30px);
+  color: white;
+}
+
 .Titan {
   background-image: url("Images/wallllll.png");
   position: absolute;
   width: 8em;
   height: 100em;
   border-radius: 10%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .T1 {
   top: 0em;

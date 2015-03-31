@@ -2,28 +2,7 @@
 .Scoreboard {
     position: absolute;
     left: 50%;
-    top: 20em;
-    height: 35em;
-    width: 40em;
-    margin-left: -20em;
-    box-sizing: border-box;
-    background-image: url("Images/attack-on-titan.jpg");
-    background-position: center;
-    text-align: center;
-      -webkit-transform: translateZ(0);
-   -moz-transform: translateZ(0);
-   -ms-transform: translateZ(0);
-   -o-transform: translateZ(0);
-   transform: translateZ(0);
-    -webkit-transform: translate(0, -40em);
-    -webkit-transition: -webkit-transform 0.5s;
-}
-
-
-.Startboard {
-    position: absolute;
-    left: 50%;
-    top: 20em;
+    top: 5em;
     height: 35em;
     width: 40em;
     margin-left: -20em;
@@ -33,32 +12,16 @@
     text-align: center;
     -webkit-transform: translate(0, -40em);
     -webkit-transition: -webkit-transform 0.5s;
-      -webkit-transform: translateZ(0);
-   -moz-transform: translateZ(0);
-   -ms-transform: translateZ(0);
-   -o-transform: translateZ(0);
-   transform: translateZ(0);
 }
 
-
-.Startboard-start {
-    margin-top: 20em;
-    font-size: inherit;
-    padding: 0.4em 1.5em;
-    border: 0.2em solid white;
-    background: none;
-    cursor: pointer;
-}
 /**
-
-
 * Reset transform to animate it into the correct spot on the screen.
 */
-.Scoreboard.is-visible {
+.Startboard.is-visible {
     -webkit-transform: none;
 }
 
-.Scoreboard-restart {
+.Startboard-start {
     margin-top: 20em;
     font-size: inherit;
     padding: 0.4em 1.5em;
