@@ -11,7 +11,6 @@ window.Titans = (function() {
 
 	var INITIAL_POSITION_X =  ($(window).width() / 10);
 
-
 	var INITIAL_POSITION_BOT_Y = 0;
 	var INITIAL_POSITION_TOP_Y = 0;
 
@@ -121,11 +120,13 @@ window.Titans = (function() {
 
 		if(Game.isPlaying) {
 
-			if(this.TitanOne.posTop.x < PLAYER_X_POS) {
+			if(this.TitanOne.posTop.x < PLAYER_X_POS && !this.TitanTwo.turnedOn) {
+				this.game.score ++;
 				this.TitanTwo.turnedOn = true;
 			}
 
-			if(this.TitanTwo.posTop.x < PLAYER_X_POS) {
+			if(this.TitanTwo.posTop.x < PLAYER_X_POS && !this.TitanOne.turnedOn) {
+				this.game.score ++;
 				this.TitanOne.turnedOn = true;
 			}
 

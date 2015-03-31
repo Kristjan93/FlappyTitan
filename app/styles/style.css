@@ -235,6 +235,13 @@ body {
   top: 3em;
   position: relative;
 }
+.score {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
 .Scoreboard-score {
   font-family: 'Comic Sans MS', serif;
   font-size: 3em;

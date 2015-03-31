@@ -22,6 +22,8 @@ window.Game = (function() {
 		this.onFrame = this.onFrame.bind(this);
 	};
 
+	Game.prototype.score = 0;
+
 	/**
 	 * Runs every frame. Calculates a delta and allows each game
 	 * entity to update itself.
@@ -66,6 +68,8 @@ window.Game = (function() {
 	Game.prototype.reset = function() {
 		this.player.reset();
 		this.titans.reset();
+		this.score = 0;
+		$( ".removeScore" ).remove();
 	};
 
 	/**
@@ -75,6 +79,8 @@ window.Game = (function() {
 		this.isPlaying = false;
 		document.getElementById('themesong').pause();
 		document.getElementById('deathsound').play();
+		$('.score').append( "<p>" + this.score + "</p>" );
+		$('.score p').addClass("removeScore");
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
