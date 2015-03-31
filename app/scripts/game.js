@@ -91,8 +91,9 @@ window.Game = (function() {
 	/**
 	 * Some shared constants.
 	 */
-	Game.prototype.WORLD_WIDTH = 102.4;
-	Game.prototype.WORLD_HEIGHT = 57.6;
+	Game.prototype.WORLD_WIDTH = $( window ).width()/10;
+	Game.prototype.WORLD_HEIGHT = $( window ).height()/10;
+	console.log($( window ).height());
 
 	return Game;
 })();

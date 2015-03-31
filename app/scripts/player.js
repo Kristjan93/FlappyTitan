@@ -8,7 +8,7 @@
 	var SPEED = 30; // * 10 pixels per second
 	var WIDTH = 5;
 	var HEIGHT = 12;
-	var INITIAL_POSITION_X = 30;
+	var INITIAL_POSITION_X = 5;
 	var INITIAL_POSITION_Y = 25;
 
 	var JUMP_UP = 8;
@@ -36,7 +36,6 @@
 		if (Controls.keys.space && Controls._didJump) {
 			Game.isPlaying = true;
 			this.pos.y -= JUMP_UP;
-			document.getElementById('jumpsound').play();
 			Controls.didJump();
 		}
 
