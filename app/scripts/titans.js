@@ -75,6 +75,7 @@ window.Titans = (function() {
 		if(Game.isPlaying) {
 
 			if(this.TitanOne.posTop.x < PLAYER_X_POS) {
+				
 				this.TitanTwo.turnedOn = true;
 			}
 
