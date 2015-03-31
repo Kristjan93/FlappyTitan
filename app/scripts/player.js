@@ -7,7 +7,7 @@
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
 	var WIDTH = 5;
-	var HEIGHT = 15;
+	var HEIGHT = 0; //($(window).height() / 10);
 
 	var JUMP_UP = 8;
 	var FALL_DOWN = 0.1;
@@ -63,10 +63,10 @@
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
-			this.pos.y + HEIGHT > (this.game.WORLD_HEIGHT + $(".ground").height())	) {
+			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
 			Game.isPlaying = false;
 			return this.game.gameover();
-		}
+		} 
 	};
 
 	//This function need a helper function caled overlaps
@@ -75,6 +75,11 @@
 		var didTouch = false;
 		Player = $('.Player')[0];
 		$('.Titan').map(function() {
+			if (overlaps(Player, this)) {
+				didTouch = true;
+			}
+		});
+		$('#ground').map(function() {
 			if (overlaps(Player, this)) {
 				didTouch = true;
 			}

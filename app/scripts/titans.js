@@ -10,7 +10,7 @@ window.Titans = (function() {
 
 	var INITIAL_POSITION_X =  ($(window).width() / 10);
 
-	var INITIAL_POSITION_BOT_Y = 37;
+	var INITIAL_POSITION_BOT_Y = ($(window).height() / 10) * 0.665;
 	var INITIAL_POSITION_TOP_Y = 0;
 
 	var Titans = function(el1, el2, el3, el4, game) {
@@ -40,7 +40,7 @@ window.Titans = (function() {
 			posTop: {
 				x: 0,
 				y: 0
-			}		
+			}
 		}
 
 		this.game = game;
@@ -67,6 +67,7 @@ window.Titans = (function() {
 		this.TitanTwo.posTop.y = INITIAL_POSITION_TOP_Y;
 		this.TitanTwo.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanTwo.posTop.x + 'em, ' + this.TitanTwo.posTop.y + 'em)');
 		this.TitanTwo.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanTwo.posBot.x + 'em, ' + this.TitanTwo.posBot.y + 'em)');
+		this.TitanTwo.turnedOn = false;
 	};
 
 	Titans.prototype.onFrame = function(delta) {
