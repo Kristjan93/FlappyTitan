@@ -8,8 +8,8 @@
 	var SPEED = 30; // * 10 pixels per second
 	var WIDTH = 5;
 	var HEIGHT = 12;
-	var INITIAL_POSITION_X = 5;
-	var INITIAL_POSITION_Y = 25;
+	// var INITIAL_POSITION_X = 0.1*this.game.WORLD_WIDTH;
+	// var INITIAL_POSITION_Y = 0.5*this.game.WORLD_HEIGHT;
 
 	var JUMP_UP = 8;
 	var FALL_DOWN = 0.4;
@@ -27,8 +27,8 @@
 	 * Resets the state of the player for a new game.
 	 */
 	Player.prototype.reset = function() {
-		this.pos.x = INITIAL_POSITION_X;
-		this.pos.y = INITIAL_POSITION_Y;
+		this.pos.x = 0.2*this.game.WORLD_WIDTH;
+		this.pos.y = 0.4*this.game.WORLD_HEIGHT;
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -54,7 +54,7 @@
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT	) {
 			Game.isPlaying = false;
 			return this.game.gameover();
 		}
