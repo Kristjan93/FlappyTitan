@@ -7,7 +7,7 @@
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
 	var WIDTH = 5;
-	var HEIGHT = 12;
+	var HEIGHT = 15;
 	// var INITIAL_POSITION_X = 0.1*this.game.WORLD_WIDTH;
 	// var INITIAL_POSITION_Y = 0.5*this.game.WORLD_HEIGHT;
 
@@ -38,8 +38,11 @@
 		if (Controls.keys.space && Controls._didJump) {
 			Game.isPlaying = true;
 			this.pos.y -= JUMP_UP;
-			document.getElementById('jumpsound').play();
-			
+			// var jumpsound = document.getElementById('jumpsound');
+			// jumpsound.src = "jump.m4a";
+			// jumpsound.volume = 0.5;
+			// jumpsound.play();
+			// jumpsound.loop = false;
 			this.gravitySpeed = FALL_DOWN;
 			Controls.didJump();
 		}
@@ -60,7 +63,7 @@
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT	) {
+			this.pos.y + HEIGHT > (this.game.WORLD_HEIGHT + $(".ground").height())	) {
 			Game.isPlaying = false;
 			return this.game.gameover();
 		}

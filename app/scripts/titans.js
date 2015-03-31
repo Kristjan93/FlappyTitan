@@ -7,7 +7,7 @@ window.Titans = (function() {
 	var WIDTH = 5;
 	var HEIGHT = 12;
 
-	var INITIAL_POSITION_X = 105;
+	var INITIAL_POSITION_X = $(window).width();
 
 	var INITIAL_POSITION_BOT_Y = 37;
 	var INITIAL_POSITION_TOP_Y = 0;
