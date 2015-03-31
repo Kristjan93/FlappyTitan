@@ -63,11 +63,7 @@
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
-<<<<<<< HEAD
 			this.pos.y + HEIGHT > (this.game.WORLD_HEIGHT)	) {
-=======
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
->>>>>>> d0900fe332415f5cecf4b3298c29466b1fdbcf1c
 			Game.isPlaying = false;
 			return this.game.gameover();
 		} 
