@@ -65,8 +65,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
-		this.titans.resetTitanOne();
-		this.titans.resetTitanTwo();
+		this.titans.reset();
 	};
 
 	/**

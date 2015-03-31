@@ -7,7 +7,7 @@
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
 	var WIDTH = 5;
-	var HEIGHT = 0; //($(window).height() / 10);
+	var HEIGHT = ($('#ground').height() / 10) + 4;
 
 	var JUMP_UP = 8;
 	var FALL_DOWN = 0.1;
@@ -53,7 +53,7 @@
 		}
 
 		this.checkCollisionWithBounds();
-		this.checkCollisionWithTitan();
+		//this.checkCollisionWithTitan();
 
 		// Update UI
 		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
@@ -63,11 +63,7 @@
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
-<<<<<<< HEAD
-			this.pos.y + HEIGHT > (this.game.WORLD_HEIGHT)	) {
-=======
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
->>>>>>> d0900fe332415f5cecf4b3298c29466b1fdbcf1c
 			Game.isPlaying = false;
 			return this.game.gameover();
 		} 
