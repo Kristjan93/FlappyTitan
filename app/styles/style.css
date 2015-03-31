@@ -279,30 +279,25 @@ body {
 }
 
 .Titan {
-  background-color: black;
-  background-size: cover;
+  background-image: url("Images/wallllll.png");
   position: absolute;
-  width: 10em;
-  height: 40em;
+  width: 8em;
+  height: 100em;
   border-radius: 10%;
 }
 .T1 {
   top: 0em;
   left: 0em;
-  webkit-transform: rotate(180deg);
 }
 .T2 {
   top: 0em;
   left: 0em;
 }
 .T3 {
-  background-color: green;
   top: 0em;
   left: 0em;
-  webkit-transform: rotate(180deg);
 }
 .T4 {
-  background-color: blue;
   left: 0em;
   top: 0em;
 }

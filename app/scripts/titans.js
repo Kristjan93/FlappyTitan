@@ -1,9 +1,8 @@
 window.Titans = (function() {
 	'use strict';
+	console.log("size");
 
-	// All these constants are in em's, multiply by 10 pixels
-	// for 1024x576px canvas.
-	var SPEED = 20; // * 10 pixels per second
+	var SPEED = $('.GameCanvas').width() * 0.04;
 	var WIDTH = 5;
 	var HEIGHT = 12;
 
@@ -53,38 +52,38 @@ window.Titans = (function() {
 		switch (pick) {
 			case 1:
 				console.log("case1");
-				INITIAL_POSITION_BOT_Y = 40;
-				INITIAL_POSITION_TOP_Y = -20;
+				INITIAL_POSITION_BOT_Y = 47;
+				INITIAL_POSITION_TOP_Y = -71;
 				break;
 			case 2:
 				console.log("case2");
-				INITIAL_POSITION_BOT_Y = 30;
-				INITIAL_POSITION_TOP_Y = -27;
+				INITIAL_POSITION_BOT_Y = 26;
+				INITIAL_POSITION_TOP_Y = -93;
 				break;
 			case 3:
 				console.log("case3");
-				INITIAL_POSITION_BOT_Y = 45;
-				INITIAL_POSITION_TOP_Y = -12;
+				INITIAL_POSITION_BOT_Y = 34;
+				INITIAL_POSITION_TOP_Y = -85;
 				break;
 			case 4:
 				console.log("case4");
-				INITIAL_POSITION_BOT_Y = 26;
-				INITIAL_POSITION_TOP_Y = -32;
+				INITIAL_POSITION_BOT_Y = 36;
+				INITIAL_POSITION_TOP_Y = -82;
 				break;
 			case 5:
 				console.log("case5");
-				INITIAL_POSITION_BOT_Y = 51;
-				INITIAL_POSITION_TOP_Y = -9;
+				INITIAL_POSITION_BOT_Y = 40;
+				INITIAL_POSITION_TOP_Y = -78;
 				break;
 			default:
 				console.log("case default");
-				INITIAL_POSITION_BOT_Y = 30;
-				INITIAL_POSITION_TOP_Y = -30;
+				INITIAL_POSITION_BOT_Y = 45;
+				INITIAL_POSITION_TOP_Y = -74;
 		}
 	}
 
 	Titans.prototype.reset = function() {
-		this.randTitans();
+		// this.randTitans();
 		this.resetTitanOne();
 		this.resetTitanTwo();
 		this.TitanOne.turnedOn = true;
