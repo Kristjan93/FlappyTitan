@@ -12,7 +12,7 @@
 	// var INITIAL_POSITION_Y = 0.5*this.game.WORLD_HEIGHT;
 
 	var JUMP_UP = 8;
-	var FALL_DOWN = 0.4;
+	var FALL_DOWN = 0.1;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -22,6 +22,8 @@
 			y: 0
 		};
 	};
+
+	Player.prototype.gravitySpeed = FALL_DOWN; 
 
 	/**
 	 * Resets the state of the player for a new game.
@@ -36,11 +38,15 @@
 		if (Controls.keys.space && Controls._didJump) {
 			Game.isPlaying = true;
 			this.pos.y -= JUMP_UP;
+			document.getElementById('jumpsound').play();
+			
+			this.gravitySpeed = FALL_DOWN;
 			Controls.didJump();
 		}
 
 		if (!Controls._didJump && Game.isPlaying) {
-			this.pos.y += FALL_DOWN;
+			this.pos.y += this.gravitySpeed;
+			this.gravitySpeed += 0.025;
 		}
 
 		this.checkCollisionWithBounds();
