@@ -1,4 +1,3 @@
-
 window.Game = (function() {
 	'use strict';
 
@@ -12,10 +11,10 @@ window.Game = (function() {
 
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.titans = new window.Titans(this.el.find('.T1'),
-		this.el.find('.T2'),
-		this.el.find('.T3'),
-		this.el.find('.T4'),
-		this);
+			this.el.find('.T2'),
+			this.el.find('.T3'),
+			this.el.find('.T4'),
+			this);
 
 		this.isPlaying = false;
 
@@ -35,7 +34,7 @@ window.Game = (function() {
 
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
-		delta = now - this.lastFrame;
+			delta = now - this.lastFrame;
 
 		this.lastFrame = now;
 
@@ -66,7 +65,8 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
-		this.titans.reset();
+		this.titans.resetTitanOne();
+		this.titans.resetTitanTwo();
 	};
 
 	/**
@@ -82,20 +82,23 @@ window.Game = (function() {
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
-				.one('click', function() {
-					scoreboardEl.removeClass('is-visible');
-					that.start();
-				});
+			.one('click', function() {
+				scoreboardEl.removeClass('is-visible');
+				that.start();
+			});
 	};
 
 	/**
 	 * Some shared constants.
 	 */
-	Game.prototype.WORLD_WIDTH = $( window ).width()/10;
-	Game.prototype.WORLD_HEIGHT = $( window ).height()/10;
-	console.log($( window ).height());
-
+	Game.prototype.WORLD_WIDTH = $(window).width() / 10;
+	Game.prototype.WORLD_HEIGHT = $(window).height() / 10;
+	console.log($(window).height());
+	console.log($(window).width());
+	$(window).resize(function() {
+		console.log("window resize");
+		Game.prototype.WORLD_WIDTH = $(window).width() / 10;
+		Game.prototype.WORLD_HEIGHT = $(window).height() / 10;
+	});
 	return Game;
 })();
-
-

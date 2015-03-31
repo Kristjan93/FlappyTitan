@@ -6,9 +6,9 @@ window.Titans = (function() {
 	var SPEED = 20; // * 10 pixels per second
 	var WIDTH = 5;
 	var HEIGHT = 12;
+	var PLAYER_X_POS = 0.2*($(window).width() / 10);
 
 	var INITIAL_POSITION_X =  ($(window).width() / 10);
-	console.log(INITIAL_POSITION_X);
 
 	var INITIAL_POSITION_BOT_Y = 37;
 	var INITIAL_POSITION_TOP_Y = 0;
@@ -49,7 +49,7 @@ window.Titans = (function() {
 	/**
 	 * Resets the state of the player for a new game.
 	 */
-	Titans.prototype.reset = function() {
+	Titans.prototype.resetTitanOne = function() {
 		//Titan tree
 		this.TitanOne.posBot.x = INITIAL_POSITION_X;
 		this.TitanOne.posBot.y = INITIAL_POSITION_BOT_Y;
@@ -57,7 +57,9 @@ window.Titans = (function() {
 		this.TitanOne.posTop.y = INITIAL_POSITION_TOP_Y;
 		this.TitanOne.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanOne.posTop.x + 'em, ' + this.TitanOne.posTop.y + 'em)');
 		this.TitanOne.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanOne.posBot.x + 'em, ' + this.TitanOne.posBot.y + 'em)');
+	};
 
+	Titans.prototype.resetTitanTwo = function() {
 		//Titan Two
 		this.TitanTwo.posBot.x = INITIAL_POSITION_X;
 		this.TitanTwo.posBot.y = INITIAL_POSITION_BOT_Y;
@@ -71,15 +73,22 @@ window.Titans = (function() {
 
 		if(Game.isPlaying) {
 
-			if(this.TitanOne.posTop.x < 20) {
-				// this.TitanOne.turnedOn = false;
+			if(this.TitanOne.posTop.x < PLAYER_X_POS) {
 				this.TitanTwo.turnedOn = true;
 			}
 
-			if(this.TitanTwo.posTop.x < -10) {
+			if(this.TitanTwo.posTop.x < PLAYER_X_POS) {
 				this.TitanOne.turnedOn = true;
+			}
+
+			if(this.TitanOne.posTop.x < -10) {
+				this.TitanOne.turnedOn = false;
+				this.resetTitanOne();
+			}
+
+			if(this.TitanTwo.posTop.x < -10) {
 				this.TitanTwo.turnedOn = false;
-				this.reset();
+				this.resetTitanTwo();
 			}
 
 			if(this.TitanOne.turnedOn) {
