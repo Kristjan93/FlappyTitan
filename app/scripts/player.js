@@ -7,7 +7,7 @@
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
 	var WIDTH = 5;
-	var HEIGHT = 12;
+	var HEIGHT = 15;
 	var INITIAL_POSITION_X = 5;
 	var INITIAL_POSITION_Y = 25;
 
@@ -39,7 +39,7 @@
 			Game.isPlaying = true;
 			this.pos.y -= JUMP_UP;
 			document.getElementById('jumpsound').play();
-			
+
 			this.gravitySpeed = FALL_DOWN;
 			Controls.didJump();
 		}

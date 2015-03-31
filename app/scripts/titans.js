@@ -7,7 +7,8 @@ window.Titans = (function() {
 	var WIDTH = 5;
 	var HEIGHT = 12;
 
-	var INITIAL_POSITION_X = 105;
+	var INITIAL_POSITION_X =  ($(window).width() / 10);
+	console.log(INITIAL_POSITION_X);
 
 	var INITIAL_POSITION_BOT_Y = 37;
 	var INITIAL_POSITION_TOP_Y = 0;
@@ -39,7 +40,8 @@ window.Titans = (function() {
 			posTop: {
 				x: 0,
 				y: 0
-			}		}
+			}		
+		}
 
 		this.game = game;
 	};
@@ -62,7 +64,7 @@ window.Titans = (function() {
 		this.TitanTwo.posTop.x = INITIAL_POSITION_X;
 		this.TitanTwo.posTop.y = INITIAL_POSITION_TOP_Y;
 		this.TitanTwo.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanTwo.posTop.x + 'em, ' + this.TitanTwo.posTop.y + 'em)');
-		this.TitanTwo.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanTwo.posBot.x + 'em, ' + this.TitanTwo.posTop.y + 'em)');
+		this.TitanTwo.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanTwo.posBot.x + 'em, ' + this.TitanTwo.posBot.y + 'em)');
 	};
 
 	Titans.prototype.onFrame = function(delta) {
