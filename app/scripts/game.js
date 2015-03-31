@@ -153,10 +153,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.WORLD_WIDTH = $(window).width() / 10;
 	Game.prototype.WORLD_HEIGHT = $(window).height() / 10;
-	console.log($(window).height());
-	console.log($(window).width());
 	$(window).resize(function() {
-		console.log("window resize");
 		Game.prototype.WORLD_WIDTH = $(window).width() / 10;
 		Game.prototype.WORLD_HEIGHT = $(window).height() / 10;
 	});

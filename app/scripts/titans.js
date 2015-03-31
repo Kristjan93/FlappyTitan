@@ -1,6 +1,5 @@
 window.Titans = (function() {
 	'use strict';
-	console.log("size");
 
 	var SPEED = $('.GameCanvas').width() * 0.04;
 	var WIDTH = 5;
@@ -51,32 +50,26 @@ window.Titans = (function() {
 		var pick = Math.floor(Math.random() * (5 - 1 + 1) + 1);
 		switch (pick) {
 			case 1:
-				console.log("case1");
 				INITIAL_POSITION_BOT_Y = 47;
 				INITIAL_POSITION_TOP_Y = -71;
 				break;
 			case 2:
-				console.log("case2");
 				INITIAL_POSITION_BOT_Y = 26;
 				INITIAL_POSITION_TOP_Y = -93;
 				break;
 			case 3:
-				console.log("case3");
 				INITIAL_POSITION_BOT_Y = 34;
 				INITIAL_POSITION_TOP_Y = -85;
 				break;
 			case 4:
-				console.log("case4");
 				INITIAL_POSITION_BOT_Y = 36;
 				INITIAL_POSITION_TOP_Y = -82;
 				break;
 			case 5:
-				console.log("case5");
 				INITIAL_POSITION_BOT_Y = 40;
 				INITIAL_POSITION_TOP_Y = -78;
 				break;
 			default:
-				console.log("case default");
 				INITIAL_POSITION_BOT_Y = 45;
 				INITIAL_POSITION_TOP_Y = -74;
 		}
@@ -155,11 +148,8 @@ window.Titans = (function() {
 		}
 	};
 	$(window).resize(function() {
-		console.log("window resize");
 		var PLAYER_X_POS = 0.2 * ($(window).width() / 10);
-
 		var INITIAL_POSITION_X = ($(window).width() / 10);
-
 		var INITIAL_POSITION_BOT_Y = 0;
 		var INITIAL_POSITION_TOP_Y = 0;
 	});
