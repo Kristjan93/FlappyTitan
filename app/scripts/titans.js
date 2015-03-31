@@ -149,9 +149,7 @@ window.Titans = (function() {
 	};
 	$(window).resize(function() {
 		var PLAYER_X_POS = 0.2 * ($(window).width() / 10);
-
 		var INITIAL_POSITION_X = ($(window).width() / 10);
-
 		var INITIAL_POSITION_BOT_Y = 0;
 		var INITIAL_POSITION_TOP_Y = 0;
 	});

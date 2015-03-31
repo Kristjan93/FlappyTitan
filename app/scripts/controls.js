@@ -23,17 +23,26 @@ window.Controls = (function() {
             .on('keydown', this._onKeyDown.bind(this))
             .on('keyup', this._onKeyUp.bind(this));
 
-        $(window).mousedown(this._onClickDown.bind(this));
-        $(window).mouseup(this._onClickUp.bind(this));
-
+            $(window).mousedown(this._onClickDown.bind(this));
+            $(window).mouseup(this._onClickUp.bind(this));
     };
 
     Controls.prototype._onKeyDown = function(e) {
         // Only jump if space wasn't pressed.
-        if ( e.keyCode === 32 in KEYS) {
+        if (e.keyCode in KEYS) {
+            console.log("hello");
+            console.log(e);
             this._didJump = true;
             var keyName = KEYS[e.keyCode];
             this.keys[keyName] = true;
+        }
+    };
+
+    Controls.prototype._onKeyUp = function(e) {
+        if (e.keyCode in KEYS) {
+            var keyName = KEYS[e.keyCode];
+            this.keys[keyName] = false;
+            return false;
         }
     };
 
@@ -49,15 +58,6 @@ window.Controls = (function() {
     Controls.prototype._onClickUp = function(e) {
         if (e) {
             var keyName = KEYS[32];
-            this.keys[keyName] = false;
-            return false;
-        }
-    };
-
-
-    Controls.prototype._onKeyUp = function(e) {
-        if (e.keyCode in KEYS) {
-            var keyName = KEYS[e.keyCode];
             this.keys[keyName] = false;
             return false;
         }
