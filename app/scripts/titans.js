@@ -10,7 +10,7 @@ window.Titans = (function() {
 
 	var INITIAL_POSITION_X =  ($(window).width() / 10);
 
-	var INITIAL_POSITION_BOT_Y = 37;
+	var INITIAL_POSITION_BOT_Y = $(window).height + getElementById('ground').height();
 	var INITIAL_POSITION_TOP_Y = 0;
 
 	var Titans = function(el1, el2, el3, el4, game) {
