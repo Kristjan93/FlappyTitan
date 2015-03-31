@@ -7,9 +7,9 @@ window.Titans = (function() {
 	var WIDTH = 5;
 	var HEIGHT = 12;
 
-	var PLAYER_X_POS = 0.2*($(window).width() / 10);
+	var PLAYER_X_POS = 0.2 * ($(window).width() / 10);
 
-	var INITIAL_POSITION_X =  ($(window).width() / 10);
+	var INITIAL_POSITION_X = ($(window).width() / 10);
 
 	var INITIAL_POSITION_BOT_Y = 0;
 	var INITIAL_POSITION_TOP_Y = 0;
@@ -49,38 +49,38 @@ window.Titans = (function() {
 
 	Titans.prototype.randTitans = function() {
 		//Math.floor(Math.random()*(max-min+1)+min);
-		var pick = Math.floor(Math.random()*(5-1+1)+1);
-		switch(pick) {
-    		case 1:
-    			console.log("case1");
-        		INITIAL_POSITION_BOT_Y = 40;
-        		INITIAL_POSITION_TOP_Y = -20;
-        	break;
-    		case 2:
-    			console.log("case2");
-        		INITIAL_POSITION_BOT_Y = 30;
-        		INITIAL_POSITION_TOP_Y = -27;
-        	break;
-        	case 3:
-        		console.log("case3");
-        		INITIAL_POSITION_BOT_Y = 45;
-        		INITIAL_POSITION_TOP_Y = -12;
-        	break;
-        	case 4:
-        		console.log("case4");
-        		INITIAL_POSITION_BOT_Y = 26;
-        		INITIAL_POSITION_TOP_Y = -32;
-        	break;
-        	case 5:
-        		console.log("case5");
-        		INITIAL_POSITION_BOT_Y = 51;
-        		INITIAL_POSITION_TOP_Y = -9;
-        	break;
-    		default:
-    			console.log("case default");
-        		INITIAL_POSITION_BOT_Y = 30;
-        		INITIAL_POSITION_TOP_Y = -30;
-}
+		var pick = Math.floor(Math.random() * (5 - 1 + 1) + 1);
+		switch (pick) {
+			case 1:
+				console.log("case1");
+				INITIAL_POSITION_BOT_Y = 40;
+				INITIAL_POSITION_TOP_Y = -20;
+				break;
+			case 2:
+				console.log("case2");
+				INITIAL_POSITION_BOT_Y = 30;
+				INITIAL_POSITION_TOP_Y = -27;
+				break;
+			case 3:
+				console.log("case3");
+				INITIAL_POSITION_BOT_Y = 45;
+				INITIAL_POSITION_TOP_Y = -12;
+				break;
+			case 4:
+				console.log("case4");
+				INITIAL_POSITION_BOT_Y = 26;
+				INITIAL_POSITION_TOP_Y = -32;
+				break;
+			case 5:
+				console.log("case5");
+				INITIAL_POSITION_BOT_Y = 51;
+				INITIAL_POSITION_TOP_Y = -9;
+				break;
+			default:
+				console.log("case default");
+				INITIAL_POSITION_BOT_Y = 30;
+				INITIAL_POSITION_TOP_Y = -30;
+		}
 	}
 
 	Titans.prototype.reset = function() {
@@ -118,36 +118,36 @@ window.Titans = (function() {
 
 	Titans.prototype.onFrame = function(delta) {
 
-		if(Game.isPlaying) {
+		if (Game.isPlaying) {
 
-			if(this.TitanOne.posTop.x < PLAYER_X_POS && !this.TitanTwo.turnedOn) {
-				this.game.score ++;
+			if (this.TitanOne.posTop.x < PLAYER_X_POS && !this.TitanTwo.turnedOn) {
+				this.game.score++;
 				this.TitanTwo.turnedOn = true;
 			}
 
-			if(this.TitanTwo.posTop.x < PLAYER_X_POS && !this.TitanOne.turnedOn) {
-				this.game.score ++;
+			if (this.TitanTwo.posTop.x < PLAYER_X_POS && !this.TitanOne.turnedOn) {
+				this.game.score++;
 				this.TitanOne.turnedOn = true;
 			}
 
-			if(this.TitanOne.posTop.x < -10) {
+			if (this.TitanOne.posTop.x < -10) {
 				this.TitanOne.turnedOn = false;
 				this.resetTitanOne();
 			}
 
-			if(this.TitanTwo.posTop.x < -10) {
+			if (this.TitanTwo.posTop.x < -10) {
 				this.TitanTwo.turnedOn = false;
 				this.resetTitanTwo();
 			}
 
-			if(this.TitanOne.turnedOn) {
+			if (this.TitanOne.turnedOn) {
 				this.TitanOne.posTop.x -= delta * SPEED;
 				this.TitanOne.posBot.x -= delta * SPEED;
 				this.TitanOne.titanTop.css('transform', 'translateZ(0) translate(' + this.TitanOne.posTop.x + 'em, ' + this.TitanOne.posTop.y + 'em)');
 				this.TitanOne.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanOne.posBot.x + 'em, ' + this.TitanOne.posBot.y + 'em)');
 			}
 
-			if(this.TitanTwo.turnedOn) {
+			if (this.TitanTwo.turnedOn) {
 				this.TitanTwo.posTop.x -= delta * SPEED;
 				this.TitanTwo.posBot.x -= delta * SPEED;
 				this.TitanTwo.titanBot.css('transform', 'translateZ(0) translate(' + this.TitanTwo.posTop.x + 'em, ' + this.TitanTwo.posTop.y + 'em)');
@@ -155,12 +155,14 @@ window.Titans = (function() {
 			}
 		}
 	};
+	$(window).resize(function() {
+		console.log("window resize");
+		var PLAYER_X_POS = 0.2 * ($(window).width() / 10);
 
+		var INITIAL_POSITION_X = ($(window).width() / 10);
+
+		var INITIAL_POSITION_BOT_Y = 0;
+		var INITIAL_POSITION_TOP_Y = 0;
+	});
 	return Titans;
 })();
-
-
-
-
-
-

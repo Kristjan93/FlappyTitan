@@ -53,6 +53,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		this.reset();
+		document.getElementById('themesong').play();
 
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
@@ -69,7 +70,7 @@ window.Game = (function() {
 		this.player.reset();
 		this.titans.reset();
 		this.score = 0;
-		$( ".removeScore" ).remove();
+		$(".removeScore").remove();
 	};
 
 	/**
@@ -79,7 +80,7 @@ window.Game = (function() {
 		this.isPlaying = false;
 		document.getElementById('themesong').pause();
 		document.getElementById('deathsound').play();
-		$('.score').append( "<p>" + this.score + "</p>" );
+		$('.score').append("<p>" + this.score + "</p>");
 		$('.score p').addClass("removeScore");
 		// Should be refactored into a Scoreboard class.
 		var that = this;
@@ -93,6 +94,43 @@ window.Game = (function() {
 			});
 	};
 
+	var mute = false;
+	$('#mutebutton').click(function(e) {
+		var jumpsound = document.getElementById('jumpsound');
+		var deathsound = document.getElementById('deathsound');
+		var themesong = document.getElementById('themesong');
+		if (!mute) {
+			$('#mutebutton').css('background-image', 'url(styles/Images/unmute.png)');
+			mute = true;
+		} else {
+
+			$('#mutebutton').css('background-image', 'url(styles/Images/mute.png)');
+			mute = false;
+		}
+		if(themesong.muted && mutemusic){
+			
+		}
+		else{
+			themesong.muted = !themesong.muted;
+		}
+		jumpsound.muted = !jumpsound.muted;
+		deathsound.muted = !deathsound.muted;
+	});
+
+
+	var mutemusic = false;
+	$('#mutemusic').click(function(e) {
+		var themesong = document.getElementById('themesong');
+		if (!mutemusic) {
+			$('#mutemusic').css('background-image', 'url(styles/Images/unmutemusic.png)');
+			mutemusic = true;
+		} else {
+
+			$('#mutemusic').css('background-image', 'url(styles/Images/mutemusic.png)');
+			mutemusic = false;
+		}
+		themesong.muted = !themesong.muted;
+	});
 	/**
 	 * Some shared constants.
 	 */

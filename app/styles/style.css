@@ -137,6 +137,24 @@ body {
   background: -o-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
   background: -webkit-linear-gradient(to bottom, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
 }
+#mutebutton {
+  background-image: url('Images/Mute.png');
+  top: 1em;
+  left: 1em;
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  overflow: hidden;
+}
+#mutemusic {
+  background-image: url('Images/mutemusic.png');
+  top: 1em;
+  left: 6em;
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  overflow: hidden;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: ?#?ccc?;

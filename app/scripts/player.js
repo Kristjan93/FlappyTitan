@@ -37,11 +37,11 @@
 			Game.isPlaying = true;
 			this.pos.y -= JUMP_UP;
 
-			// var jumpsound = document.getElementById('jumpsound');
-			// jumpsound.src = "jump.m4a";
-			// jumpsound.volume = 0.5;
-			// jumpsound.play();
-			// jumpsound.loop = false;
+			var jumpsound = document.getElementById('jumpsound');
+			jumpsound.src = "pew.mp3";
+			jumpsound.volume = 0.5;
+			jumpsound.play();
+			jumpsound.loop = false;
 
 			this.gravitySpeed = FALL_DOWN;
 			Controls.didJump();
