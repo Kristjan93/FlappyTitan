@@ -99,10 +99,17 @@ window.Game = (function() {
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
-			.one('click', function() {
+			.one('vmousedown', function() {
 				scoreboardEl.removeClass('is-visible');
 				that.start();
 			});
+			
+			// $(window).keypress(function(e) {
+			// 	if(e.which == 13) {
+			// 		scoreboardEl.removeClass('is-visible');
+			// 		that.start();
+			// 	}
+			// });
 	};
 
 	var mute = false;
@@ -119,7 +126,6 @@ window.Game = (function() {
 			jumpsound.muted = true;
 			deathsound.muted = true;
 		} else {
-
 			$('#mutebutton').css('background-image', 'url(styles/Images/mute.png)');
 			mute = false;
 			if (mutemusic) {
@@ -129,7 +135,6 @@ window.Game = (function() {
 			jumpsound.muted = false;
 			deathsound.muted = false;
 		}
-
 	});
 
 
@@ -145,8 +150,6 @@ window.Game = (function() {
 			$('#mutemusic').css('background-image', 'url(styles/Images/mutemusic.png)');
 			mutemusic = false;
 		}
-
-
 	});
 	/**
 	 * Some shared constants.

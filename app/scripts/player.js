@@ -21,7 +21,8 @@
 		};
 	};
 
-	Player.prototype.gravitySpeed = FALL_DOWN; 
+	Player.prototype.gravitySpeed = FALL_DOWN;
+	Player.prototype.rotate = 0; 
 
 	/**
 	 * Resets the state of the player for a new game.
@@ -44,7 +45,7 @@
 			jumpsound.volume = 0.5;
 			jumpsound.play();
 			jumpsound.loop = false;
-
+			this.rotate = -30;
 			this.gravitySpeed = FALL_DOWN;
 			Controls.didJump();
 		}
@@ -52,13 +53,16 @@
 		if (!Controls._didJump && Game.isPlaying) {
 			this.pos.y += this.gravitySpeed;
 			this.gravitySpeed += 0.025;
+			if(this.rotate <= 70) {
+				this.rotate += 0.5;
+			}
 		}
 
 		this.checkCollisionWithBounds();
 		this.checkCollisionWithTitan();
 
 		// Update UI
-		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em) rotate(' + this.rotate + 'deg)');
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
@@ -68,7 +72,7 @@
 			this.pos.y + HEIGHT > (this.game.WORLD_HEIGHT)	) {
 			Game.isPlaying = false;
 			return this.game.gameover();
-		} 
+		}
 	};
 
 	//This function need a helper function caled overlaps
