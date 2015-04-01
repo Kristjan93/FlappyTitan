@@ -150,6 +150,11 @@ body {
   background-image: url('Images/mute.png');
   top: 1em;
   left: 1em;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
   height: 5em;
   width: 5em;
   position: absolute;
@@ -159,6 +164,11 @@ body {
   background-image: url('Images/mutemusic.png');
   top: 1em;
   left: 6em;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
   height: 5em;
   width: 5em;
   position: absolute;
@@ -172,6 +182,11 @@ body {
 }
 
 #ground {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
   position: absolute;
   left: 0%;
   top: 90%;
@@ -183,11 +198,6 @@ body {
   -webkit-animation: groundmove 0.75s steps(10) infinite;
   -moz-animation: groundmove 0.75s steps(10) infinite;
   -o-animation: groundmove 0.75s steps(10) infinite;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
 }
 @-webkit-keyframes groundmove {
   from {
