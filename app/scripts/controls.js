@@ -22,9 +22,12 @@ window.Controls = (function() {
         $(window)
             .on('keydown', this._onKeyDown.bind(this))
             .on('keyup', this._onKeyUp.bind(this));
+            
 
-            $(window).mousedown(this._onClickDown.bind(this));
-            $(window).mouseup(this._onClickUp.bind(this));
+            ///$(window).mousedown(this._onClickDown.bind(this));
+            // $(window).mouseup(this._onClickUp.bind(this));
+            $('.GameCanvas').on('vmouseup', this._onClickUp.bind(this));
+            $('.GameCanvas').on('vmousedown',this._onClickDown.bind(this));
     };
 
     Controls.prototype._onKeyDown = function(e) {
