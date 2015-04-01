@@ -21,3 +21,30 @@
 }
 
 
+.Player-wings {
+  // Positioned from top left of parent.
+  position: absolute;
+  left: 0em;
+  top: 3.4em;
+  height: 0.4em;
+  width: 2.5em;
+  
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+
+  background: green;
+  transform-origin: top left;
+  animation: 0.4s flap alternate infinite;
+}
+
+@keyframes flap {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
+}
