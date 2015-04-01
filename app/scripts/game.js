@@ -99,17 +99,10 @@ window.Game = (function() {
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
-			.one('vmousedown', function() {
+			.one('tap', function() {
 				scoreboardEl.removeClass('is-visible');
 				that.start();
 			});
-			
-			// $(window).keypress(function(e) {
-			// 	if(e.which == 13) {
-			// 		scoreboardEl.removeClass('is-visible');
-			// 		that.start();
-			// 	}
-			// });
 	};
 
 	var mute = false;
