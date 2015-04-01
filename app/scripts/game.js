@@ -113,7 +113,7 @@ window.Game = (function() {
 	};
 
 	var mute = false;
-	$('#mutebutton').on('vmousedown', function(e) {
+	$('#mutebutton').on('tap', function(e) {
 		var jumpsound = document.getElementById('jumpsound');
 		var deathsound = document.getElementById('deathsound');
 		var themesong = document.getElementById('themesong');
@@ -139,7 +139,7 @@ window.Game = (function() {
 
 
 	var mutemusic = false;
-	$('#mutemusic').on('vmousedown',function(e) {
+	$('#mutemusic').on('tap',function(e) {
 		var themesong = document.getElementById('themesong');
 		if (!mutemusic) {
 			themesong.pause();
