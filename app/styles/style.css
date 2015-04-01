@@ -147,7 +147,7 @@ body {
   transform: translateZ(0);
 }
 #mutebutton {
-  background-image: url('Images/Mute.png');
+  background-image: url('Images/mute.png');
   top: 1em;
   left: 1em;
   height: 5em;
