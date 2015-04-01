@@ -180,14 +180,14 @@ body {
   background-image: url("Images/ground.png");
   background-color: green;
   overflow: hidden;
+  -webkit-animation: groundmove 0.75s steps(10) infinite;
+  -moz-animation: groundmove 0.75s steps(10) infinite;
+  -o-animation: groundmove 0.75s steps(10) infinite;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
   -o-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-animation: groundmove 0.75s steps(10) infinite;
-  -moz-animation: groundmove 0.75s steps(10) infinite;
-  -o-animation: groundmove 0.75s steps(10) infinite;
 }
 @-webkit-keyframes groundmove {
   from {
