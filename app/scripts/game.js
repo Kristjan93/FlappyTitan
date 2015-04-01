@@ -9,7 +9,7 @@ $( document ).ready(function() {
          */
         var Game = function(el) {
             this.el = el;
-
+            // Initialize the Player and the columns he will try to avoid
             this.player = new window.Player(this.el.find('.Player'), this);
             this.titans = new window.Titans(this.el.find('.T1'),
                 this.el.find('.T2'),
@@ -21,17 +21,9 @@ $( document ).ready(function() {
 
             // Cache a bound onFrame since we need it each frame.
             this.onFrame = this.onFrame.bind(this);
-
-            var startEl = this.el.find('.Startboard');
-            startEl
-                .addClass('is-visible')
-                .find('.Startboard-start')
-                .one('click', function() {
-                    start.removeClass('is-visible');
-                    that.start();
-                });
         };
 
+        // Keep track of the player's score
         Game.prototype.score = 0;
 
         /**
@@ -63,6 +55,7 @@ $( document ).ready(function() {
          */
         Game.prototype.start = function() {
             this.reset();
+            // Continues themesong if player hasn't muted it by now 
             if (!mutemusic) {
                 document.getElementById('themesong').play();
             }
@@ -81,7 +74,7 @@ $( document ).ready(function() {
             this.player.reset();
             this.titans.reset();
             this.score = 0;
-            $(".removeScore").remove();
+            $(".removeScore").remove(); 
         };
 
         /**
@@ -91,9 +84,12 @@ $( document ).ready(function() {
             this.isPlaying = false;
             document.getElementById('themesong').pause();
             document.getElementById('deathsound').play();
+
+            // Give the player his respective score for the session
             $('.score').append("<p>" + this.score + "</p>");
             $('.score p').addClass("removeScore");
-            // Should be refactored into a Scoreboard class.
+
+            // Make the Scoreborad appear and dismiss it with a click or tap
             var that = this;
             var scoreboardEl = this.el.find('.Scoreboard');
             scoreboardEl
@@ -105,31 +101,50 @@ $( document ).ready(function() {
                 });
         };
 
+        /*
+         * A function which mutes all the sounds in the game by the click/tap of an icon
+         */
         var mute = false;
         $('#mutebutton').on('tap', function(e) {
+            
+            // Retrieve the game sound elements
             var jumpsound = document.getElementById('jumpsound');
             var deathsound = document.getElementById('deathsound');
             var themesong = document.getElementById('themesong');
+
             if (!mute) {
+
+                // change the mute icon to unmute
                 $('#mutebutton').css('background-image', 'url(styles/Images/unmute.png)');
                 mute = true;
+
+                // if we haven't muted the music yet mute it
                 if (!mutemusic) {
                     themesong.muted = true;
                 }
+
+                // mute the rest of the sounds
                 jumpsound.muted = true;
                 deathsound.muted = true;
             } else {
+
+                // change the unmute icon to mute
                 $('#mutebutton').css('background-image', 'url(styles/Images/mute.png)');
                 mute = false;
                 if (mutemusic) {
                     themesong.muted = false;
                 }
+                // unmute the rest of the sounds
                 themesong.muted = false;
                 jumpsound.muted = false;
                 deathsound.muted = false;
             }
         });
 
+        /**
+         * A function which mutes only the music in the game, well it actually pauses it
+         * very much the same lo
+         */
         var mutemusic = false;
         $('#mutemusic').on('tap',function(e) {
             var themesong = document.getElementById('themesong');
@@ -144,7 +159,7 @@ $( document ).ready(function() {
             }
         });
         /**
-         * Some shared constants.
+         * Some shared constants. And a function that modifies them whenever the window resizes
          */
         Game.prototype.WORLD_WIDTH = $(window).width() / 10;
         Game.prototype.WORLD_HEIGHT = $(window).height() / 10;

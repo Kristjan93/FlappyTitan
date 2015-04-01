@@ -6,8 +6,7 @@ $( document ).ready(function() {
          * Key codes we're interested in.
          */
         var KEYS = {
-            32: 'space',
-            252: 'click'
+            32: 'space'
         };
 
         /**
@@ -22,19 +21,39 @@ $( document ).ready(function() {
             $(window)
                 .on('keydown', this._onKeyDown.bind(this))
                 .on('keyup', this._onKeyUp.bind(this));
-                
+                // jQuery mobile integration added with vmouseup/down
                 $('.GameCanvas').on('vmouseup', this._onClickUp.bind(this));
                 $('.GameCanvas').on('vmousedown',this._onClickDown.bind(this));
         };
-
+        /**
+         * Functions which checks the input from and makes the player 
+         * move accordingly for both standard i/o devices and touchscreens
+         */
         Controls.prototype._onKeyDown = function(e) {
-            // Only jump if space wasn't pressed.
+            // Only jump if space was pressed.
             if (e.keyCode in KEYS) {
-                console.log("hello");
-                console.log(e);
                 this._didJump = true;
                 var keyName = KEYS[e.keyCode];
                 this.keys[keyName] = true;
+            }
+        };
+
+        Controls.prototype._onClickDown = function(e) {
+            if (e) {
+                this._didJump = true;
+                var keyName = KEYS[32];
+                this.keys[keyName] = true;
+            }
+        };
+
+        /**
+         * Functions which lets the game know that the player finished jumping
+         */
+        Controls.prototype._onClickUp = function(e) {
+            if (e) {
+                var keyName = KEYS[32];
+                this.keys[keyName] = false;
+                return false;
             }
         };
 
@@ -45,24 +64,7 @@ $( document ).ready(function() {
                 return false;
             }
         };
-
-        Controls.prototype._onClickDown = function(e) {
-            // Only jump if space wasn't pressed.
-            if (e) {
-                this._didJump = true;
-                var keyName = KEYS[32];
-                this.keys[keyName] = true;
-            }
-        };
-
-        Controls.prototype._onClickUp = function(e) {
-            if (e) {
-                var keyName = KEYS[32];
-                this.keys[keyName] = false;
-                return false;
-            }
-        };
-
+        
         /**
          * Only answers true once until a key is pressed again.
          */

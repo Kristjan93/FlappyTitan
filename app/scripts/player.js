@@ -5,8 +5,7 @@ $( document ).ready(function() {
 		var Controls = window.Controls;
 
 		// All these constants are in em's, multiply by 10 pixels
-		// for 1024x576px canvas.
-		var SPEED = 30; // * 10 pixels per second
+		var SPEED = 30; // * 10 pixels per second (font-size of body)
 		var WIDTH = 5;
 		var HEIGHT = ($('#ground').height() / 10) + 4;
 
@@ -22,6 +21,7 @@ $( document ).ready(function() {
 			};
 		};
 
+		// Artificial gravity for the game
 		Player.prototype.gravitySpeed = FALL_DOWN;
 		Player.prototype.rotate = 0; 
 
