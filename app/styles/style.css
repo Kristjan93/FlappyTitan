@@ -247,6 +247,7 @@ body {
   transform: translateZ(0);
   background: green;
   transform-origin: top left;
+  -webkit-animation: 0.4s flap alternate infinite;
   animation: 0.4s flap alternate infinite;
 }
 @keyframes flap {
@@ -305,8 +306,6 @@ body {
   cursor: pointer;
 }
 /**
-
-
 * Reset transform to animate it into the correct spot on the screen.
 */
 .Scoreboard.is-visible {
