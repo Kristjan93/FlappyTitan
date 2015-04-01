@@ -20,6 +20,15 @@ window.Game = (function() {
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
+
+		var startEl = this.el.find('.Startboard');
+		startEl
+			.addClass('is-visible')
+			.find('.Startboard-start')
+			.one('click', function() {
+				start.removeClass('is-visible');
+				that.start();
+			});
 	};
 
 	Game.prototype.score = 0;
@@ -53,8 +62,9 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		this.reset();
-		document.getElementById('themesong').play();
-
+		if (!mutemusic) {
+			document.getElementById('themesong').play();
+		}
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
 
@@ -71,6 +81,7 @@ window.Game = (function() {
 		this.titans.reset();
 		this.score = 0;
 		$(".removeScore").remove();
+
 	};
 
 	/**
@@ -102,19 +113,23 @@ window.Game = (function() {
 		if (!mute) {
 			$('#mutebutton').css('background-image', 'url(styles/Images/unmute.png)');
 			mute = true;
+			if (!mutemusic) {
+				themesong.muted = true;
+			}
+			jumpsound.muted = true;
+			deathsound.muted = true;
 		} else {
 
 			$('#mutebutton').css('background-image', 'url(styles/Images/mute.png)');
 			mute = false;
+			if (mutemusic) {
+				themesong.muted = false;
+			}
+			themesong.muted = false;
+			jumpsound.muted = false;
+			deathsound.muted = false;
 		}
-		if(themesong.muted && mutemusic){
-			
-		}
-		else{
-			themesong.muted = !themesong.muted;
-		}
-		jumpsound.muted = !jumpsound.muted;
-		deathsound.muted = !deathsound.muted;
+
 	});
 
 
@@ -122,14 +137,16 @@ window.Game = (function() {
 	$('#mutemusic').click(function(e) {
 		var themesong = document.getElementById('themesong');
 		if (!mutemusic) {
+			themesong.pause();
 			$('#mutemusic').css('background-image', 'url(styles/Images/unmutemusic.png)');
 			mutemusic = true;
 		} else {
-
+			themesong.play();
 			$('#mutemusic').css('background-image', 'url(styles/Images/mutemusic.png)');
 			mutemusic = false;
 		}
-		themesong.muted = !themesong.muted;
+
+
 	});
 	/**
 	 * Some shared constants.
