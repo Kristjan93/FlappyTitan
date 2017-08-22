@@ -1,6 +1,7 @@
-# HTML5 CSS-based Game
+# Fun game implemented using only html, css and javascript.
+> Might have gone a bit overboard with the sound effects but there is a mute button if that's your style.
 
-This game was inspired by the popular anime series Attack on Titan.
+This game was inspired by the popular anime series Attack on Titan and the Flappy Bird game.
 The project has the following attributes:
 
 * All functionality requirements given in the project description were met and more
@@ -12,8 +13,13 @@ The project has the following attributes:
 * All moving graphics were rendered in 3d taking advantage of full hardware acceleration)
 
 ## Setup
-The following commands are required to set up the projects
+Make sure you have bower and grunt installed.
 ```
+npm install -g bower grunt
+```
+Clone the repository and run the following.
+```
+cd FlappyTitan/
 npm install
 bower install
 grunt server
@@ -23,3 +29,5 @@ grunt server
 Our game was developed and optimized with and for the Google Chrome browser as well as the iPhone 6plus Chrome browser app.
 All though the game is playable on every screen size it's most enjoyable when the screen isn't all too big e.g. 15 inch retina big
 the browser window can be resized to get a more fun version of the game,
+
+
