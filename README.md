@@ -1,4 +1,4 @@
-# Fun game implemented using only html, css and javascript.
+# Fun game implemented using only HTML, CSS and JavaScript.
 > Might have gone a bit overboard with the sound effects but there is a mute button if that's your style.
 
 This game was inspired by the popular anime series Attack on Titan and the Flappy Bird game.
