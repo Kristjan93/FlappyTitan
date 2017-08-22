@@ -4,13 +4,13 @@
 This game was inspired by the popular anime series Attack on Titan and the Flappy Bird game.
 The project has the following attributes:
 
-* All functionality requirements given in the project description were met and more
+* All functionality requirements given in the project description were met and more.
 * A simple game loop which calculates delta and can be started and stopped.
-* A flying Captain Levi looking for titans inside the walls of Shiganshina
+* A flying Captain Levi looking for titans inside the walls of Shiganshina.
 * All positions and sizes defined using a 10px em. This means that the game could be scaled up and down by changing the base font-size. This is one way to make the graphics responsive.
 * Adaptable full screen game canvas.
-* jQuery mobile was used to integrate smartphone usage for our game. Tested and works on iOS devices (Chrome browser
-* All moving graphics were rendered in 3d taking advantage of full hardware acceleration)
+* jQuery mobile was used to integrate smartphone usage for our game. Tested and works on iOS devices (Chrome browser)
+* All moving graphics were rendered in 3d taking advantage of full hardware acceleration).
 
 ## Setup
 Make sure you have bower and grunt installed.
