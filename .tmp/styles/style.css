@@ -1,0 +1,431 @@
+#clouds {
+  padding: 10em;
+}
+
+/* Cloud shape */
+
+.cloud {
+  width: 20em;
+  height: 6em;
+  background: #B8B8B8;
+  border-radius: 20em;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.cloud:before,
+.cloud:after {
+  content: '';
+  background: #B8B8B8;
+  width: 10em;
+  height: 8em;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  border-radius: 10em;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.cloud:after {
+  width: 12em;
+  height: 12em;
+  top: -5.5em;
+  left: auto;
+  right: 1.5em;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/*Time to animate*/
+
+.x1 {
+  top: -5em;
+  left: 20em;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+
+.x2 {
+  top: -13em;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  -webkit-animation: moveclouds 35s linear infinite;
+  -moz-animation: moveclouds 35s linear infinite;
+  -o-animation: moveclouds 35s linear infinite;
+}
+
+.x3 {
+  top: -10em;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-animation: moveclouds 40s linear infinite;
+  -moz-animation: moveclouds 40s linear infinite;
+  -o-animation: moveclouds 40s linear infinite;
+}
+
+.x4 {
+  top: -25em;
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite;
+}
+
+.x5 {
+  top: -30em;
+  left: 10em;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-animation: moveclouds 50s linear infinite;
+  -moz-animation: moveclouds 50s linear infinite;
+  -o-animation: moveclouds 50s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {
+    margin-left: 100em;
+  }
+
+  100% {
+    margin-left: -100em;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+.GameCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #163C52 0%, #4F4F47 30%, #C5752D 60%, #B7490F 80%, #2F1107 100%);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#mutebutton {
+  background-image: url('Images/mute.png');
+  top: 1em;
+  left: 1em;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  overflow: hidden;
+}
+
+#mutemusic {
+  background-image: url('Images/mutemusic.png');
+  top: 1em;
+  left: 6em;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  overflow: hidden;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: ?#?ccc?;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+#ground {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: absolute;
+  left: 0%;
+  top: 90%;
+  width: 100%;
+  height: 10em;
+  background-image: url("Images/ground.png");
+  background-color: green;
+  overflow: hidden;
+  -webkit-animation: groundmove 0.75s steps(10) infinite;
+  -moz-animation: groundmove 0.75s steps(10) infinite;
+  -o-animation: groundmove 0.75s steps(10) infinite;
+}
+
+@-webkit-keyframes groundmove {
+  from {
+    background-position: 0em;
+  }
+
+  to {
+    background-position: -100em;
+  }
+}
+
+.Player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5em;
+  height: 7em;
+  background: blue;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  background: url('Images/levi3	.png') no-repeat center center;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20%;
+}
+
+.Player-wings {
+  position: absolute;
+  left: 0em;
+  top: 3.4em;
+  height: 0.4em;
+  width: 2.5em;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  background: green;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: 0.4s flap alternate infinite;
+  animation: 0.4s flap alternate infinite;
+}
+
+@-webkit-keyframes flap {
+  from {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+
+  to {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+}
+
+@keyframes flap {
+  from {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+
+  to {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+}
+
+.Scoreboard {
+  position: absolute;
+  left: 50%;
+  top: 20em;
+  height: 35em;
+  width: 40em;
+  margin-left: -20em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url("Images/attack-on-titan.jpg");
+  background-position: center;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
+}
+
+.Startboard {
+  position: absolute;
+  left: 50%;
+  top: 20em;
+  height: 35em;
+  width: 40em;
+  margin-left: -20em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url("Images/attack-on-titan.jpg");
+  background-position: center;
+  text-align: center;
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.Startboard-start {
+  margin-top: 20em;
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  border: 0.2em solid white;
+  background: none;
+  cursor: pointer;
+}
+
+/**
+* Reset transform to animate it into the correct spot on the screen.
+*/
+
+.Scoreboard.is-visible {
+  -webkit-transform: none;
+}
+
+.Scoreboard-restart {
+  margin-top: 20em;
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  border: 0.2em solid white;
+  background: none;
+  cursor: pointer;
+}
+
+.Scoreboard-endText {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+
+.score {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+
+.Scoreboard-score {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+
+.Scoreboard-restartText {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 2.4em;
+  color: black;
+}
+
+#finaltext {
+  overflow: hidden;
+  font-size: em(30px);
+  color: white;
+}
+
+.Scoreboard {
+  position: absolute;
+  left: 50%;
+  top: 5em;
+  height: 35em;
+  width: 40em;
+  margin-left: -20em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url("Images/attack-on-titan.jpg");
+  background-position: center;
+  text-align: center;
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
+}
+
+/**
+* Reset transform to animate it into the correct spot on the screen.
+*/
+
+.Startboard.is-visible {
+  -webkit-transform: none;
+}
+
+.Startboard-start {
+  margin-top: 20em;
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  border: 0.2em solid white;
+  background: none;
+  cursor: pointer;
+}
+
+.Scoreboard-endText {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+
+.score {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+
+.Scoreboard-score {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 3em;
+  color: white;
+  top: 3em;
+  position: relative;
+}
+
+.Scoreboard-restartText {
+  font-family: 'Comic Sans MS', serif;
+  font-size: 2.4em;
+  color: white;
+}
+
+#finaltext {
+  overflow: hidden;
+  font-size: em(30px);
+  color: white;
+}
+
+.Titan {
+  background-image: url("Images/wallllll.png");
+  position: absolute;
+  width: 8em;
+  height: 100em;
+  border-radius: 10%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.T1 {
+  top: 0em;
+  left: 0em;
+}
+
+.T2 {
+  top: 0em;
+  left: 0em;
+}
+
+.T3 {
+  top: 0em;
+  left: 0em;
+}
+
+.T4 {
+  left: 0em;
+  top: 0em;
+}
