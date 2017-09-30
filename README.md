@@ -31,7 +31,7 @@ grunt server
 ## Develoers note:
 Our game was developed and optimized with and for the Google Chrome browser as well as the iPhone 6plus Chrome browser app.
 All though the game is playable on every screen size it's most enjoyable when the screen isn't all too big e.g. 15 inch retina big.
-The browser window can be resized to get a more fun version of the game.
+
 
 
 
