@@ -12,6 +12,9 @@ The project has the following attributes:
 * jQuery mobile was used to integrate smartphone usage for our game. Tested and works on iOS devices (Chrome browser)
 * All moving graphics were rendered in 3d taking advantage of full hardware acceleration).
 
+## Check it out (Warning music is high)
+[Flappy Titan Game !](https://flappy-titan-game.herokuapp.com/)
+
 ## Setup
 Make sure you have bower and grunt installed.
 ```
@@ -27,7 +30,8 @@ grunt server
 
 ## Develoers note:
 Our game was developed and optimized with and for the Google Chrome browser as well as the iPhone 6plus Chrome browser app.
-All though the game is playable on every screen size it's most enjoyable when the screen isn't all too big e.g. 15 inch retina big
-the browser window can be resized to get a more fun version of the game,
+All though the game is playable on every screen size it's most enjoyable when the screen isn't all too big e.g. 15 inch retina big.
+The browser window can be resized to get a more fun version of the game.
+
 
 
